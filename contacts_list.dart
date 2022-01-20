@@ -53,13 +53,14 @@ class ContactsList extends StatelessWidget {
     Navigator.of(context).push(
     MaterialPageRoute(
     builder: (context) => const ContactForm(),
-            ),
-          );
+    ),
+    );
     },
     child: const Icon(
     Icons.add),
-    )
-  } //arrumar indentação
+    ),
+    );
+  }
 
 
 }
