@@ -1,15 +1,18 @@
-class contact{
-  final int id;
-  final string name;
-  final int accountNumber;
-  
-  Contact(
-    this.id, //para ter acesso a class id dentro do database
+class Contact
+{
+final int id;
+final String name;
+final int? accountNumber;
+
+
+Contact(
+    this.id,
     this.name,
-    this.accountNumber,
-    );
-  
-  @override
-  String toString(){
-    return 'Contact{id: $id, name: $name, accountNumber: $accountNumber};
-    }
+    this.accountNumber);
+
+@override
+String toString() {
+  return 'Contact{id: $id, name: $name, accountNumber: $accountNumber}';
+}
+
+}
