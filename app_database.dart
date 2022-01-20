@@ -18,7 +18,7 @@ db.execute('CREATE TABLE contacts('
 Future <int>  save(contact contact){
  return  createDatabase().then((db){
   final Map<String, dynamic> contactMap = Map();
-  contactMap['id'] = contact.id;
+            // contactMap['id'] = contact.id; removido pois Sqlite incrementa id's do tipo inteiro
    contactMap['name'] = contact.name;
    contactMap['account_number'] = contact.accountNumber;
   rturn db.insert('contacts', contactMap); //uso de future para execução assíncrona
