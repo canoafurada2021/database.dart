@@ -1,15 +1,21 @@
+import 'dart:io';
 import 'package:bytebankapp/database/app_database.dart';
-import 'package:bytebankapp/Screens/contact_form.dart';
 import 'package:bytebankapp/Screens/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'models/contact.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
-void main(){
+void main() {
+  if (Platform.isWindows) {
+    sqfliteFfiInit();
+    databaseFactory = databaseFactoryFfi;
+  }
 
-runApp(BytebankApp());
-findAll().then((contacts) => debugPrint(contacts.toString()));
+  runApp(const BytebankApp());
+  findAll().then((contacts) => debugPrint(contacts.toString()));
 }
- class BytebankApp extends StatelessWidget {
+
+class BytebankApp extends StatelessWidget {
   const BytebankApp({Key? key}) : super(key: key);
 
   @override
